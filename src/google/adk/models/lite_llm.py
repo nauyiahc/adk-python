@@ -179,7 +179,7 @@ def _content_to_message_param(
                 id=part.function_call.id,
                 function=Function(
                     name=part.function_call.name,
-                    arguments=part.function_call.args,
+                    arguments=_safe_json_serialize(part.function_call.args),
                 ),
             )
         )
